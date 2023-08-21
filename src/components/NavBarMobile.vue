@@ -14,14 +14,10 @@
                 </p>
             </div>
             <div id="nav" class="nav-menu">
-                <router-link 
-                    v-for="navlink in navlinks" 
-                    :key="navlink.link" 
-                    :to="navlink.link"
-                    @click="closeMenu"
-                >
-                    <img :src="require('../assets/img/icons/' + navlink.img)" class="navlink-icon-mob" width="18" height="18" :alt="navlink.name" loading="lazy">
-                    <span class="navlink-text" :style="navlink.color">{{navlink.name}}</span>
+                <router-link v-for="navlink in navlinks" :key="navlink.link" :to="navlink.link" @click="closeMenu">
+                    <img :src="require('../assets/img/icons/' + navlink.img)" class="navlink-icon-mob" width="18"
+                        height="18" :alt="navlink.name" loading="lazy">
+                    <span class="navlink-text" :style="navlink.color">{{ navlink.name }}</span>
                 </router-link>
             </div>
             <ThemeSwitcher />
@@ -77,9 +73,10 @@ export default {
 
 <style>
 .navbar.mobile {
-  display: none
+    display: none
 }
-@media (max-width: 600px) { 
+
+@media (max-width: 600px) {
     .navbar.mobile {
         display: block;
         left: -100%;
@@ -91,6 +88,7 @@ export default {
         overflow-y: scroll;
         padding: 0;
     }
+
     .navbar.mobile .navbar-content {
         width: 75%;
         min-height: 100vh;
@@ -100,30 +98,37 @@ export default {
         background-color: var(--navbar-mobile-bg-color);
         border-right: var(--box-border);
     }
+
     .navbar.mobile .navbar-intro-avatar {
         width: 9rem;
         height: 9rem;
     }
+
     .navbar.mobile .nav-menu a {
         justify-content: flex-start;
     }
+
     .navlink-icon-mob {
         margin-right: 1rem;
     }
+
     .navbar.mobile .navlink-text {
         display: inline-block;
     }
- }
+}
+
 @media (max-width: 350px) {
-  .navbar.mobile .navbar-intro {
-    height: 16rem;
-  }
-  .navbar.mobile .navbar-intro-avatar {
-    width: 6rem;
-    height: 6rem;
-  }
-  .navbar.mobile .nav-menu a {
-    padding: .8rem 10%;
-  }
+    .navbar.mobile .navbar-intro {
+        height: 16rem;
+    }
+
+    .navbar.mobile .navbar-intro-avatar {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .navbar.mobile .nav-menu a {
+        padding: .8rem 10%;
+    }
 }
 </style>
